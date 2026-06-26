@@ -1,0 +1,175 @@
+/* ─── Auth Pages CSS ─────────────────────────────── */
+.auth-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.auth-bg { position: absolute; inset: 0; pointer-events: none; }
+.auth-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+}
+.auth-orb-1 { width: 500px; height: 500px; background: var(--primary); top: -150px; left: -150px; }
+.auth-orb-2 { width: 400px; height: 400px; background: var(--secondary); bottom: -120px; right: -120px; }
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-container {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+}
+
+.auth-card {
+  flex: 1;
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.auth-header h2 { font-size: 1.6rem; }
+.auth-header p { color: var(--text-secondary); font-size: 0.88rem; margin-top: 4px; }
+
+/* Role selector */
+.role-selector {
+  display: flex;
+  gap: 8px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  padding: 6px;
+  border: 1px solid var(--glass-border);
+}
+.role-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 8px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.role-btn.active {
+  background: var(--grad-primary);
+  box-shadow: 0 2px 12px var(--primary-glow);
+}
+.role-btn-icon { font-size: 1.3rem; }
+.role-btn-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+}
+.role-btn.active .role-btn-label { color: white; }
+
+/* Form */
+.auth-form { display: flex; flex-direction: column; gap: 16px; }
+
+.input-wrapper { position: relative; }
+.input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+.input-with-icon { padding-left: 42px; }
+.input-with-action { padding-right: 42px; }
+.input-eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex; align-items: center;
+  transition: color 0.2s;
+}
+.input-eye:hover { color: var(--primary); }
+
+.auth-footer-text {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.auth-link { color: var(--primary); font-weight: 600; text-decoration: none; }
+.auth-link:hover { text-decoration: underline; }
+
+/* Info panel */
+.auth-info-panel {
+  width: 280px;
+  background: var(--grad-primary);
+  padding: 40px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.info-panel-content { color: white; text-align: center; }
+.info-panel-icon { font-size: 3rem; margin-bottom: 20px; }
+.info-panel-content h3 { color: white; font-size: 1.25rem; margin-bottom: 10px; }
+.info-panel-content p { color: rgba(255,255,255,0.8); font-size: 0.85rem; margin-bottom: 24px; }
+.info-features { display: flex; flex-direction: column; gap: 10px; text-align: left; }
+.info-feature {
+  display: flex;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.9);
+}
+.info-feature span { color: #00E5A0; font-weight: 700; flex-shrink: 0; }
+
+/* Register specific */
+.register-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.register-grid.full { grid-template-columns: 1fr; }
+.section-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  padding: 4px 0;
+  border-bottom: 1px solid var(--glass-border);
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .auth-container { flex-direction: column; }
+  .auth-info-panel { width: 100%; }
+  .register-grid { grid-template-columns: 1fr; }
+}
